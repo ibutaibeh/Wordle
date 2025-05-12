@@ -1,4 +1,4 @@
-const wordsArray=["rossa",
+const wordsArray = ["rossa",
     "jetty",
     "wizzo",
     "cuppa",
@@ -14854,4 +14854,4 @@ const wordsArray=["rossa",
     "cadgy",
     "jalap"];
 
-module.exports = wordsArray;
+// module.exports = wordsArray;
