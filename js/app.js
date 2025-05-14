@@ -1,29 +1,22 @@
-// import wordsArray from '../js/wordsArray';
-// const wordsArray = require('../js/wordsArray');
+//Constent
 const wordsArray=["fanes","nuevo","yirds","envoy","foggy","herms","shand","yclad","maray","sooks"];
+const keyboardIcons = document.querySelectorAll('.keyboradLetter');
+const gameNameMessage= document.querySelector('.gameName');
+const gameAlertMessage= document.querySelector('.alertMessage');
+const guessLetters= document.querySelectorAll('.wordChild');
+const settingsIcon=document.querySelector('.settingsIcon');
+
+const settingsIcon1=document.querySelector('#settingsIcon1');
+const settingsIcon2=document.querySelector('#settingsIcon2')
+const settingsIcon3=document.querySelector('#settingsIcon3')
+const settingsIcon4=document.querySelector('#settingsIcon4')
+const settingsIcon5=document.querySelector('#settingsIcon5')
+
+
+//Variables
 let chosenWord;
 let chosenWordLetters;
-//Wordle the game
-// win condition is to guess the word within 5 attempts
 
-//Game Flow:
-//          1- random word will be selected and stored ["abcde"]
-//          2- user will be able to click on the keyboard icons to guess the word
-//          3- the word guessed will be displayed on the 5 boxes
-//          4- the user will click Enter icon to check 
-//          5- first check if the word guessed is actually a word 
-//          6- second check if the word guessed is the right guess
-//          7- if 5 is true and 6 is false, check each letter of the guessd word with actual word
-//          8- check the order of those letters
-//          9- for each correct letter "order and letter" would turn green on the guessed list
-//-------------------------------------------------------------------------------------------------------- 
-const keyboardIcons = document.querySelectorAll('.keyboradLetter');
-
-keyboardIcons.forEach(element => {
-    element.addEventListener('click',()=>{
-    console.log('clicked');
-})
-});
 
 
 
@@ -39,9 +32,13 @@ const splitLetters = ()=>{
 chosenWordLetters=chosenWord.split("");
  return chosenWordLetters;
 }
-//
 
-
+//Game Code
+keyboardIcons.forEach(element => {
+    element.addEventListener('click',()=>{
+    console.log('clicked');
+})
+});
 chooseWord();
 splitLetters();
 console.log(chosenWord);
