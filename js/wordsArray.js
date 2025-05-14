@@ -1,4 +1,4 @@
-const wordsArray = ["rossa",
+export const wordsArray = ["rossa",
     "jetty",
     "wizzo",
     "cuppa",

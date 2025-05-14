@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(3, 109, 139);
+    background-color: rgb(249, 251, 252);
 }
 .gamePad{
     display: flex;
@@ -40,20 +40,20 @@ body{
     border: solid 1px black;
     font-size: 0.7em;
 }
-#settingsIcon4{
+/* #settingsIcon4{
     margin: 1rem;
     height: 2rem;
     width: 6rem;
     position: relative;
     font-size: 1rem;
     
-}
+} */
 #settingsIcon5{
     margin: 1rem;
     height: 3rem;
     width: 3rem;
+    border: 0;
     border-radius: 20%;
-    box-shadow:10px 5px 5px black;
     position: absolute;
     top: 0;
     right: 5px;
