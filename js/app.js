@@ -1,10 +1,11 @@
 /*-------------------------------- Constants --------------------------------*/
 import  {wordsArray}  from "./wordsArray.js";
 
-/*---------------------------- Variables (state) ----------------------------*/
+/*-------------------------------- Variables ----------------------------------*/
 let chosenWord;
 let chosenWordLetters;
 let playerWord=[];
+let isItWord;
 
 
 /*------------------------ Cached Element References ------------------------*/
@@ -14,6 +15,9 @@ const gameAlertMessage= document.querySelector('.alertMessage');
 const guessLetters= document.querySelectorAll('.wordChild');
 const settingsIcon=document.querySelectorAll('.settingsIcon');
 const deleteButton= document.querySelector('#settingsIcon2');
+const startButton= document.querySelector('#settingsIcon4');
+const enterButton= document.querySelector('#settingsIcon1')
+
 
 /*-------------------------------- Functions --------------------------------*/
 
@@ -57,13 +61,21 @@ const deleteWord=()=>{
         })
 }
 
+const startGame = ()=>{
+    chooseWord();
+    splitLetters();
+    console.log(chosenWord,chosenWordLetters)
+}
 
+const isWord=()=>{
+
+   isItWord= wordsArray.includes(playerWord.join('').toLowerCase());
+
+}
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-chooseWord();
-splitLetters()
-console.log(chosenWord,chosenWordLetters)
+
 //event to type a letter
 keyboardIcons.forEach(element => {
     element.addEventListener('click',clickIcons)
@@ -75,9 +87,12 @@ guessLetters.forEach(element=>{
 });
 
 //event to use the del button which will delete the whole word
-    deleteButton.addEventListener('click',deleteWord)
+deleteButton.addEventListener('click',deleteWord)
 
-//
+//event to start the game by [start]
+startButton.addEventListener('click',startGame);
 
+//event to check the word [Enter]
+enterButton.addEventListener('click',isWord)
 
 

@@ -14854,4 +14854,3 @@ export const wordsArray = ["rossa",
     "cadgy",
     "jalap"];
 
-// module.exports = wordsArray;
