@@ -42,13 +42,11 @@ body{
 }
 #settingsIcon4{
     margin: 1rem;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 20%;
-    box-shadow:10px 5px 5px black;
-    position: absolute;
-    top: -0;
-    left: 4px;    
+    height: 2rem;
+    width: 6rem;
+    position: relative;
+    font-size: 1rem;
+    
 }
 #settingsIcon5{
     margin: 1rem;
@@ -80,15 +78,20 @@ gap: 4px;
 
 
 .guessList{
-    box-sizing: border-box;
-    height: 25%;
-    width:25%;
-    color: aliceblue;
-    font-size: auto;
     display: flex;
     flex-wrap: wrap;
+    color: aliceblue;
+    font-size: auto;
     gap: 2em;
     align-items: center;
-     
-
+    justify-content: center;
+    margin-top: 2em;
+    
+     }
+#bt11,#bt12,#bt13,#bt14,#bt15,#bt21,#bt22,#bt23,#bt24,#bt25,#bt31,#bt32,#bt33,#bt34,#bt35,#bt41,#bt42,#bt43,#bt44,#bt45,
+#bt51,#bt52,#bt53,#bt54,#bt55{
+    height: 2em;
+    width: 2em;
 }
+
+  

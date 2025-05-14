@@ -4,18 +4,13 @@ const keyboardIcons = document.querySelectorAll('.keyboradLetter');
 const gameNameMessage= document.querySelector('.gameName');
 const gameAlertMessage= document.querySelector('.alertMessage');
 const guessLetters= document.querySelectorAll('.wordChild');
-const settingsIcon=document.querySelector('.settingsIcon');
-
-const settingsIcon1=document.querySelector('#settingsIcon1');
-const settingsIcon2=document.querySelector('#settingsIcon2')
-const settingsIcon3=document.querySelector('#settingsIcon3')
-const settingsIcon4=document.querySelector('#settingsIcon4')
-const settingsIcon5=document.querySelector('#settingsIcon5')
+const settingsIcon=document.querySelectorAll('.settingsIcon');
 
 
 //Variables
 let chosenWord;
 let chosenWordLetters;
+let playerWord=['','','','',''];
 
 
 
@@ -33,14 +28,32 @@ chosenWordLetters=chosenWord.split("");
  return chosenWordLetters;
 }
 
+//function click:
+
+const clickIcons=(element)=>{
+        for (let i=0; i<guessLetters.length;i++){
+            console.log(i)
+            if(guessLetters[i].textContent===''){
+                        guessLetters[i].textContent= element.target.textContent;
+                        playerWord[i]=element.target.textContent;
+                        console.log(playerWord);
+
+                return;
+            }
+        }
+}
+
+//Function to delete the word
+
+
+
+
 //Game Code
 keyboardIcons.forEach(element => {
-    element.addEventListener('click',()=>{
-    console.log('clicked');
-})
+    element.addEventListener('click',(event)=>{
+  clickIcons(event);
+    })
 });
-chooseWord();
-splitLetters();
-console.log(chosenWord);
-console.log(chosenWordLetters);
-console.log(keyboardIcons);
+
+
+
