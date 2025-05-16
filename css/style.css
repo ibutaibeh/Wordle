@@ -88,8 +88,7 @@ gap: 4px;
     margin-top: 2em;
     
      }
-#bt11,#bt12,#bt13,#bt14,#bt15,#bt21,#bt22,#bt23,#bt24,#bt25,#bt31,#bt32,#bt33,#bt34,#bt35,#bt41,#bt42,#bt43,#bt44,#bt45,
-#bt51,#bt52,#bt53,#bt54,#bt55{
+.guessKey{
     height: 2em;
     width: 2em;
 }

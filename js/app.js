@@ -19,8 +19,8 @@ const settingsIcon=document.querySelectorAll('.settingsIcon');
 const deleteButton= document.querySelector('#settingsIcon2');
 const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
-const guessList=document.querySelectorAll('.guessList'); 
-
+const guessList=document.querySelectorAll('.guess'); 
+//const guessBoxes= document.querySelectorAll('.guessKey');
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
@@ -85,35 +85,38 @@ const isWord=()=>{
         if(guessWordLists.length<5){
         guessWordLists.push(playerWord.join(''));
         lives=lives-1;
+
+for (let m = 0; m < guessList.length; m++) {
+    const guessBoxes = guessList[m].querySelectorAll('button');
+    const isEmpty = Array.from(guessBoxes).every(element => element.textContent === "");
+    if (isEmpty) {
+        for (let x = 0; x < guessBoxes.length; x++) {
+            guessBoxes[x].textContent = playerWord[x];
+        let lettersCondition=[];
+            if(chosenWordLetters[x]==playerWord[x].toLowerCase()){
+                lettersCondition[x]=true;
+                guessBoxes[x].style.backgroundColor='lightgreen';
+            }else if(chosenWordLetters[x]!==playerWord[x].toLowerCase()){
+                if(chosenWordLetters.includes(playerWord[x].toLowerCase())){
+
+                    guessBoxes[x].style.backgroundColor='yellow'
+
+                    } else{
+                    lettersCondition[x]=false;
+                    guessBoxes[x].style.backgroundColor='red'
+                    }
+
+            }
+    
+        }
+         break;
+        }
+}
+
         console.log('lives remain=',lives)
         }   
         gameAlertMessage.textContent=`Wrong Word | remaining Guesses ${lives}`
-        let lettersCondition=[];
-     for(let i=0;i<chosenWord.length;i++){
-            if(chosenWordLetters[i]==playerWord[i].toLowerCase()){
-                lettersCondition[i]=true;
-                document.getElementById(playerWord[i]).style.backgroundColor= 'lightgreen';
-                document.getElementById(playerWord[i]).style.color='white';
-
-            }else if(chosenWordLetters[i]!==playerWord[i].toLowerCase()){
-                if(chosenWordLetters.includes(playerWord[i].toLowerCase())){
-
-                    document.getElementById(playerWord[i]).style.backgroundColor='yellow'
-                    console.log('iam yellow')
-
-                    }
-                    else{
-                    lettersCondition[i]=false;
-                    document.getElementById(playerWord[i]).style.backgroundColor='red'
-                    }
-              
-                
-            }
-
-   
-     }
      console.log(chosenWordLetters,playerWord)
-     console.log('letter condition',lettersCondition);
      console.log('GS words = ',guessWordLists)
 
    }
@@ -141,5 +144,3 @@ startButton.addEventListener('click',startGame);
 
 //event to check the word [Enter]
 enterButton.addEventListener('click',isWord)
-
-
