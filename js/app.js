@@ -15,11 +15,12 @@ const keyboardIcons = document.querySelectorAll('.keyboradLetter');
 const gameNameMessage= document.querySelector('.gameName');
 const gameAlertMessage= document.querySelector('.alertMessage');
 const guessLetters= document.querySelectorAll('.wordChild');
-const settingsIcon=document.querySelectorAll('.settingsIcon');
+const guessKeyBoxes=document.querySelectorAll('.guessKey');
 const deleteButton= document.querySelector('#settingsIcon2');
 const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
+const resetButton=document.querySelector('#settingsIcon3')
 //const guessBoxes= document.querySelectorAll('.guessKey');
 /*-------------------------------- Functions --------------------------------*/
 
@@ -37,7 +38,7 @@ chosenWordLetters=chosenWord.split("");
 
 //function click to choose a letter:
 const clickIcons=(element)=>{
-        for (let i=0; i<guessLetters.length;i++){
+    for (let i=0; i<guessLetters.length;i++){
             if(guessLetters[i].textContent===''){
                         guessLetters[i].textContent= element.target.textContent;
                         playerWord[i]=element.target.textContent;
@@ -62,13 +63,16 @@ const deleteWord=()=>{
             playerWord=[]
         })
 }
+//Fuction to start the game
 
 const startGame = ()=>{
     chooseWord();
     splitLetters();
+    winWord=false;
+    gameAlertMessage.textContent=`Choose a word | remaining Guesses ${lives}`
     console.log('chosen word=',chosenWord,'- letters',chosenWordLetters)
 }
-
+// function game logic
 const isWord=()=>{
 
    isItWord= wordsArray.includes(playerWord.join('').toLowerCase());
@@ -88,6 +92,8 @@ const isWord=()=>{
 
 for (let m = 0; m < guessList.length; m++) {
     const guessBoxes = guessList[m].querySelectorAll('button');
+    console.log({guessBoxes});
+    
     const isEmpty = Array.from(guessBoxes).every(element => element.textContent === "");
     if (isEmpty) {
         for (let x = 0; x < guessBoxes.length; x++) {
@@ -123,8 +129,35 @@ for (let m = 0; m < guessList.length; m++) {
  
 }
 
+//Function reset button
+
+const resetGame=()=>{
+    lives=5;
+    deleteWord();
+    console.log(guessKeyBoxes.length)
+    for (let y = 0; y < guessKeyBoxes.length; y++) {
+    guessKeyBoxes[y].style.backgroundColor='aliceblue'
+    guessKeyBoxes[y].textContent=''
+    }
+    for (let i=0; i<5;i++){
+        guessWordLists.pop();
+    }
+    startGame()
+    console.log(guessWordLists);
+}
 /*----------------------------- Event Listeners -----------------------------*/
 
+
+    //event to start the game by [start]
+startButton.addEventListener('click',startGame);
+
+//event to reset the game by [reset]
+resetButton.addEventListener('click',resetGame);
+//event to use the del button which will delete the whole word [del]
+deleteButton.addEventListener('click',deleteWord)
+
+//event to check the word [Enter]
+enterButton.addEventListener('click',isWord)
 
 //event to type a letter
 keyboardIcons.forEach(element => {
@@ -136,11 +169,8 @@ guessLetters.forEach(element=>{
     element.addEventListener('click',deleteLetter)
 });
 
-//event to use the del button which will delete the whole word [del]
-deleteButton.addEventListener('click',deleteWord)
 
-//event to start the game by [start]
-startButton.addEventListener('click',startGame);
 
-//event to check the word [Enter]
-enterButton.addEventListener('click',isWord)
+
+
+

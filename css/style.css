@@ -89,8 +89,9 @@ gap: 4px;
     
      }
 .guessKey{
+    background-color: aliceblue;
     height: 2em;
-    width: 2em;
+    width: 2em;    
 }
 
   
