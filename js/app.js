@@ -21,7 +21,7 @@ const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
 const resetButton=document.querySelector('#settingsIcon3')
-const introScreen= document.querySelector('.intro');
+const introScreen= document.querySelector('.intro-message');
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
