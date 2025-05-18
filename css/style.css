@@ -10,7 +10,7 @@ body{
     position: fixed;
     box-sizing: border-box;
     justify-items: center;
-    align-content: top;
+    align-content: center;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -109,6 +109,7 @@ gap: 4px;
     background-color: antiquewhite;
     box-shadow: 0px 5px 10px 10px ;
     transition: all 0.3s ease ;
+    cursor: pointer;
 } 
 .keyboradLetter:hover{
     transform: scale(1.5);

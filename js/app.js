@@ -21,6 +21,7 @@ const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
 const resetButton=document.querySelector('#settingsIcon3')
+const introScreen= document.querySelector('.intro');
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
@@ -171,7 +172,12 @@ guessLetters.forEach(element=>{
     element.addEventListener('click',deleteLetter)
 });
 
-
+introScreen.addEventListener('click',()=>{
+    document.querySelector('.intro').style.zIndex='-1'
+    document.querySelector('.intro-message').textContent='';
+    startGame();
+    console.log('clicked');
+})
 
 
 
