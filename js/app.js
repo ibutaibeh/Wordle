@@ -21,7 +21,6 @@ const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
 const resetButton=document.querySelector('#settingsIcon3')
-//const guessBoxes= document.querySelectorAll('.guessKey');
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
@@ -90,6 +89,7 @@ const isWord=()=>{
         guessWordLists.push(playerWord.join(''));
         lives=lives-1;
 
+
 for (let m = 0; m < guessList.length; m++) {
     const guessBoxes = guessList[m].querySelectorAll('button');
     console.log({guessBoxes});
@@ -117,7 +117,9 @@ for (let m = 0; m < guessList.length; m++) {
         }
          break;
         }
+
 }
+                   deleteWord();
 
         console.log('lives remain=',lives)
         }   
@@ -136,7 +138,7 @@ const resetGame=()=>{
     deleteWord();
     console.log(guessKeyBoxes.length)
     for (let y = 0; y < guessKeyBoxes.length; y++) {
-    guessKeyBoxes[y].style.backgroundColor='aliceblue'
+    guessKeyBoxes[y].style.backgroundColor='papayawhip'
     guessKeyBoxes[y].textContent=''
     }
     for (let i=0; i<5;i++){
