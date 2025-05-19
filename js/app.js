@@ -93,7 +93,7 @@ const isWord=()=>{
     
 
    }else if(!isItWord){
-    gameAlertMessage.textContent=`this is not a word`
+    gameAlertMessage.textContent=`This is not a word`
     deleteWord();
     }
 

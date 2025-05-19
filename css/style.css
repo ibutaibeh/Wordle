@@ -73,26 +73,16 @@ color: rgb(255, 255, 255);
     width: 2.5rem;
     border: solid 1px black;
     font-size: 0.7em;
+        transition: all 0.3s ease ;
+    cursor: pointer;
 }
-/* #settingsIcon4{
-    margin: 1rem;
-    height: 2rem;
-    width: 6rem;
-    position: relative;
-    font-size: 1rem;
-    
-} */
-/* #settingsIcon5{
-    margin: 1rem;
-    height: 3rem;
-    width: 3rem;
-    border: 0;
-    border-radius: 20%;
-    position: absolute;
-    top: 0;
-    right: 5px;
-    
-} */
+.settingsIcon:hover{
+    background-color: black;
+    color: peachpuff;
+     border: solid 1px yellow;
+     transform: scale(1.5);
+}
+
 .keyborad{
 display:flex;
 flex-wrap: wrap;
