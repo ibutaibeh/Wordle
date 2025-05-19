@@ -30,6 +30,7 @@ h2{
 
 .alertMessage{
 color: rgb(255, 255, 255);
+
 }
 
 .gamePad{
@@ -131,5 +132,36 @@ gap: 4px;
     width: 2em;
     border: dashed ;    
 }
+.hint{
+    display: flex;
+    position: absolute;
+    top: 5em;
+    right: 7.5em;
+    flex-wrap: wrap;
+color: peachpuff;
+align-items: center;
+gap: 0.2em;
+}
 
-  
+.hintButton{
+    height: 2em;
+    width: 2em;
+    background-color: peachpuff;
+    color: peachpuff;
+}
+  /* .outro{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    opacity: 100%;
+    background-color: black;
+    z-index: -2;
+    align-content: center;
+    justify-items: center;
+  }
+.startAgain{
+    height: 3em;
+    width: 3em;
+    font-size: 3rem; 
+} */
+

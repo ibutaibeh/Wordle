@@ -9,10 +9,10 @@ let isItWord;
 let winWord;
 let guessWordLists=[];
 let lives=5;
+let hintLetters=[];
 
 /*------------------------ Cached Element References ------------------------*/
 const keyboardIcons = document.querySelectorAll('.keyboradLetter');
-const gameNameMessage= document.querySelector('.gameName');
 const gameAlertMessage= document.querySelector('.alertMessage');
 const guessLetters= document.querySelectorAll('.wordChild');
 const guessKeyBoxes=document.querySelectorAll('.guessKey');
@@ -22,6 +22,7 @@ const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
 const resetButton=document.querySelector('#settingsIcon3')
 const introScreen= document.querySelector('.intro-message');
+const hintWordLetter= document.querySelectorAll('.hintButton');
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
@@ -33,6 +34,12 @@ return chosenWord;
 //Function to split the chosen word to array of 5 
 const splitLetters = ()=>{
 chosenWordLetters=chosenWord.split("");
+hintLetters=chosenWord;
+hintLetters=hintLetters.toUpperCase().split("");
+for(let i=0;i<chosenWordLetters.length;i++){
+    hintWordLetter[i].textContent=hintLetters[i];
+    hintWordLetter[i].style.color='peachpuff'
+}
  return chosenWordLetters;
 }
 
@@ -79,7 +86,7 @@ const isWord=()=>{
    console.log('is it a word?',isItWord);
    if(playerWord.join('').toLowerCase()==chosenWord && isItWord){
     winWord= true; 
-    gameAlertMessage.textContent=`Congrats You Won and the word is ${chosenWord}`;
+    gameAlertMessage.textContent=`Congrats You Won and the word is ${chosenWord.toUpperCase()}`;
    }else if(!isItWord){
     gameAlertMessage.textContent=`this is not a word`
     deleteWord();
@@ -148,6 +155,8 @@ const resetGame=()=>{
     startGame()
     console.log(guessWordLists);
 }
+
+
 /*----------------------------- Event Listeners -----------------------------*/
 
 
@@ -179,6 +188,9 @@ introScreen.addEventListener('click',()=>{
     console.log('clicked');
 })
 
-
-
+hintWordLetter.forEach(element=>{
+    element.addEventListener('click',()=>{
+        element.style.color='black'
+    })
+})
 
