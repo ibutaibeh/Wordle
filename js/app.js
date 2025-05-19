@@ -87,6 +87,10 @@ const isWord=()=>{
    if(playerWord.join('').toLowerCase()==chosenWord && isItWord){
     winWord= true; 
     gameAlertMessage.textContent=`Congrats You Won and the word is ${chosenWord.toUpperCase()}`;
+    guessLetters.forEach(element=>{
+    element.style.backgroundColor='green';
+    })
+    
 
    }else if(!isItWord){
     gameAlertMessage.textContent=`this is not a word`
@@ -148,6 +152,9 @@ const resetGame=()=>{
     for (let i=0; i<5;i++){
         guessWordLists.pop();
     }
+        guessLetters.forEach(element=>{
+    element.style.backgroundColor='peachpuff';
+    })
     startGame()
     console.log(guessWordLists);
 }
