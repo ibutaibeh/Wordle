@@ -8,6 +8,14 @@ body{
 }
 .bgm{
     position: absolute;
+    background-color: gray;
+    color: black;
+}
+
+.bgm:hover{
+    background-color: rgb(9, 156, 214);
+    background: linear-gradient(to right,#03effe,#026be2);
+       cursor:pointer;
 }
 .intro{
     position: fixed;
@@ -141,20 +149,13 @@ gap: 0.2em;
     width: 2em;
     background-color: peachpuff;
     color: peachpuff;
+        transition: all 0.3s ease ;
+
 }
-  /* .outro{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    opacity: 100%;
-    background-color: black;
-    z-index: -2;
-    align-content: center;
-    justify-items: center;
-  }
-.startAgain{
-    height: 3em;
-    width: 3em;
-    font-size: 3rem; 
-} */
+ .hintButton:hover{
+    cursor: pointer;
+     transform: scale(1.5);
+     border: solid 1px rgb(243, 2, 2);
+
+ }
 

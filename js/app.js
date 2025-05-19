@@ -52,7 +52,7 @@ const clickIcons=(element)=>{
             if(guessLetters[i].textContent===''){
                         guessLetters[i].textContent= element.target.textContent;
                         playerWord[i]=element.target.textContent;
-                                    console.log(playerWord)
+                                    
 
                 return;
             }
@@ -80,16 +80,16 @@ const startGame = ()=>{
     splitLetters();
     winWord=false;
     gameAlertMessage.textContent=`Choose a word | remaining Guesses ${lives}`
-    console.log('chosen word=',chosenWord,'- letters',chosenWordLetters)
+    
 }
 // function game logic
 const isWord=()=>{
 
    isItWord= wordsArray.includes(playerWord.join('').toLowerCase());
-   console.log('is it a word?',isItWord);
+   
    if(playerWord.join('').toLowerCase()==chosenWord && isItWord){
     winWord= true; 
-    gameAlertMessage.textContent=`Congrats You Won and the word is ${chosenWord.toUpperCase()}`;
+    gameAlertMessage.textContent=`Congrats You Won`;
     guessLetters.forEach(element=>{
     element.style.backgroundColor='green';
     })
@@ -108,7 +108,7 @@ const isWord=()=>{
 
 for (let m = 0; m < guessList.length; m++) {
     const guessBoxes = guessList[m].querySelectorAll('button');
-    console.log({guessBoxes});
+    
     const isEmpty = Array.from(guessBoxes).every(element => element.textContent === "");
     if (isEmpty) {
         for (let x = 0; x < guessBoxes.length; x++) {
@@ -135,8 +135,7 @@ for (let m = 0; m < guessList.length; m++) {
 
 }   
      gameAlertMessage.textContent=`Wrong Word | remaining Guesses ${lives}`
-     console.log(chosenWordLetters,playerWord)
-     console.log('GS words = ',guessWordLists)
+  
 
    }
  
@@ -147,7 +146,7 @@ for (let m = 0; m < guessList.length; m++) {
 const resetGame=()=>{
     lives=5;
     deleteWord();
-    console.log(guessKeyBoxes.length)
+    
     for (let y = 0; y < guessKeyBoxes.length; y++) {
     guessKeyBoxes[y].style.backgroundColor='peachpuff'
     guessKeyBoxes[y].textContent=''
@@ -159,7 +158,7 @@ const resetGame=()=>{
     element.style.backgroundColor='peachpuff';
     })
     startGame()
-    console.log(guessWordLists);
+    
 }
 
 
@@ -204,9 +203,14 @@ hintWordLetter.forEach(element=>{
 
 bgmMusicButton.addEventListener('click',()=>{
     if (!bgmMusic){
+backgroundMusic.loop=true;
 backgroundMusic.play();
+bgmMusicButton.style.backgroundColor='aquamarine'
+bgmMusicButton.textContent='Music ON'
         bgmMusic=true;
     }else{
+bgmMusicButton.style.backgroundColor='grey'
+bgmMusicButton.textContent='Music OFF'
 bgmMusic=false;
 backgroundMusic.pause();
     }
