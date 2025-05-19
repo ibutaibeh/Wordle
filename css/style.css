@@ -6,6 +6,9 @@ body{
     border: solid 0.2em rgb(36, 36, 36);
     padding: 10px;
 }
+.bgm{
+    position: absolute;
+}
 .intro{
     position: fixed;
     box-sizing: border-box;

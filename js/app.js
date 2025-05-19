@@ -10,7 +10,8 @@ let winWord;
 let guessWordLists=[];
 let lives=5;
 let hintLetters=[];
-
+let backgroundMusic= new Audio("./assets/audio/BGM/1-29. Beneath the Mask.mp3")
+let bgmMusic=false;
 /*------------------------ Cached Element References ------------------------*/
 const keyboardIcons = document.querySelectorAll('.keyboradLetter');
 const gameAlertMessage= document.querySelector('.alertMessage');
@@ -23,6 +24,8 @@ const guessList=document.querySelectorAll('.guess');
 const resetButton=document.querySelector('#settingsIcon3')
 const introScreen= document.querySelector('.intro-message');
 const hintWordLetter= document.querySelectorAll('.hintButton');
+const bgmMusicButton= document.querySelector('.bgm');
+
 /*-------------------------------- Functions --------------------------------*/
 
 // Function to choose a random word from words array
@@ -195,5 +198,17 @@ hintWordLetter.forEach(element=>{
     element.addEventListener('click',()=>{
         element.style.color='black'
     })
+})
+
+//BGM music On/Off
+
+bgmMusicButton.addEventListener('click',()=>{
+    if (!bgmMusic){
+backgroundMusic.play();
+        bgmMusic=true;
+    }else{
+bgmMusic=false;
+backgroundMusic.pause();
+    }
 })
 
