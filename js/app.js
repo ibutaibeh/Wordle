@@ -87,21 +87,21 @@ const isWord=()=>{
    if(playerWord.join('').toLowerCase()==chosenWord && isItWord){
     winWord= true; 
     gameAlertMessage.textContent=`Congrats You Won and the word is ${chosenWord.toUpperCase()}`;
+
    }else if(!isItWord){
     gameAlertMessage.textContent=`this is not a word`
     deleteWord();
     }
+
     else if(!winWord && isItWord){
 
         if(guessWordLists.length<5){
         guessWordLists.push(playerWord.join(''));
         lives=lives-1;
 
-
 for (let m = 0; m < guessList.length; m++) {
     const guessBoxes = guessList[m].querySelectorAll('button');
     console.log({guessBoxes});
-    
     const isEmpty = Array.from(guessBoxes).every(element => element.textContent === "");
     if (isEmpty) {
         for (let x = 0; x < guessBoxes.length; x++) {
@@ -119,19 +119,15 @@ for (let m = 0; m < guessList.length; m++) {
                     lettersCondition[x]=false;
                     guessBoxes[x].style.backgroundColor='red'
                     }
-
             }
-    
-        }
+            }
          break;
         }
-
 }
-                   deleteWord();
+ deleteWord();
 
-        console.log('lives remain=',lives)
-        }   
-        gameAlertMessage.textContent=`Wrong Word | remaining Guesses ${lives}`
+}   
+     gameAlertMessage.textContent=`Wrong Word | remaining Guesses ${lives}`
      console.log(chosenWordLetters,playerWord)
      console.log('GS words = ',guessWordLists)
 
@@ -146,7 +142,7 @@ const resetGame=()=>{
     deleteWord();
     console.log(guessKeyBoxes.length)
     for (let y = 0; y < guessKeyBoxes.length; y++) {
-    guessKeyBoxes[y].style.backgroundColor='papayawhip'
+    guessKeyBoxes[y].style.backgroundColor='peachpuff'
     guessKeyBoxes[y].textContent=''
     }
     for (let i=0; i<5;i++){
