@@ -17,7 +17,6 @@ const gameAlertMessage= document.querySelector('.alertMessage');
 const guessLetters= document.querySelectorAll('.wordChild');
 const guessKeyBoxes=document.querySelectorAll('.guessKey');
 const deleteButton= document.querySelector('#settingsIcon2');
-const startButton= document.querySelector('#settingsIcon4');
 const enterButton= document.querySelector('#settingsIcon1')
 const guessList=document.querySelectorAll('.guess'); 
 const resetButton=document.querySelector('#settingsIcon3')
@@ -96,8 +95,7 @@ const isWord=()=>{
         if(guessWordLists.length<5){
         guessWordLists.push(playerWord.join(''));
         lives=lives-1;
-        // guessLetters.classList.add('wordChild-notWord')
-        // guessLetters.classList.replace('wordChild','wordChild-notWord')
+     
         if(lives==0){
             guessLetters.forEach(element=>{
                 element.style.backgroundColor='red';
@@ -153,9 +151,6 @@ const resetGame=()=>{
 }
 /*----------------------------- Event Listeners -----------------------------*/
 
-    //event to start the game by [start]
-startButton.addEventListener('click',startGame);
-
 //event to reset the game by [reset]
 resetButton.addEventListener('click',resetGame);
 
@@ -175,11 +170,14 @@ guessLetters.forEach(element=>{
     element.addEventListener('click',deleteLetter)
 });
 
+//event starting screen 
 introScreen.addEventListener('click',()=>{
     document.querySelector('.intro').style.zIndex='-1'
     document.querySelector('.intro-message').textContent='';
+document.querySelector('.howToPlay').style.display="none"
+    
+
     startGame();
-    console.log('clicked');
 })
 
 hintWordLetter.forEach(element=>{

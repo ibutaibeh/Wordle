@@ -35,6 +35,12 @@ body{
        z-index: 1;
 }
 
+.howToPlay{
+    color: peachpuff;
+    position: absolute;
+}
+
+
 h2{
     color: rgb(255, 255, 255);
 }
@@ -69,14 +75,6 @@ color: rgb(255, 255, 255);
     background-color: antiquewhite;
 }
 
-/* .wordChild-notWord{
-    width: 3rem;
-    height: 3rem;
-    border: solid 1px black;
-    font-size: 1em;
-    background-color: antiquewhite;
-    transform: rotateX('180');
-} */
 
 .settingsPanel{
     display: flex;
