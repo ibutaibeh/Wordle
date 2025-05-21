@@ -34,5 +34,5 @@ I have used several Tools to develop this game:
     + Dark mode
     + BGM shaffle
     + Sound effect
-+ Overhaul to the Animarion (winning).
++ Overhaul to the Animation (Winning Animation).
 + add the definition of the word to the Hint Function.

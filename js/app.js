@@ -1,6 +1,5 @@
 /*-------------------------------- Constants --------------------------------*/
 import  {wordsArray}  from "./wordsArray.js";
-
 /*-------------------------------- Variables ----------------------------------*/
 let chosenWord;
 let chosenWordLetters;
@@ -10,7 +9,7 @@ let winWord;
 let guessWordLists=[];
 let lives=5;
 let hintLetters=[];
-let backgroundMusic= new Audio("./assets/audio/BGM/1-29. Beneath the Mask.mp3")
+let backgroundMusic= new Audio("./assets/audio/BGM/BGM soundtrack.mp3")
 let bgmMusic=false;
 /*------------------------ Cached Element References ------------------------*/
 const keyboardIcons = document.querySelectorAll('.keyboradLetter');
@@ -25,9 +24,7 @@ const resetButton=document.querySelector('#settingsIcon3')
 const introScreen= document.querySelector('.intro-message');
 const hintWordLetter= document.querySelectorAll('.hintButton');
 const bgmMusicButton= document.querySelector('.bgm');
-
 /*-------------------------------- Functions --------------------------------*/
-
 // Function to choose a random word from words array
 const chooseWord = ()=>{
    chosenWord=wordsArray[Math.floor(Math.random()*wordsArray.length)];
@@ -52,8 +49,7 @@ const clickIcons=(element)=>{
             if(guessLetters[i].textContent===''){
                         guessLetters[i].textContent= element.target.textContent;
                         playerWord[i]=element.target.textContent;
-                                    
-
+                                   
                 return;
             }
         }
@@ -66,7 +62,6 @@ const deleteLetter=(element)=>{
 }
 
 //Fuction to delete the entire word
-
 const deleteWord=()=>{
     guessLetters.forEach(element=>{
             element.textContent='';
@@ -74,7 +69,6 @@ const deleteWord=()=>{
         })
 }
 //Fuction to start the game
-
 const startGame = ()=>{
     chooseWord();
     splitLetters();
@@ -93,19 +87,23 @@ const isWord=()=>{
     guessLetters.forEach(element=>{
     element.style.backgroundColor='green';
     })
-    
-
+   
    }else if(!isItWord){
     gameAlertMessage.textContent=`This is not a word`
     deleteWord();
     }
-
     else if(!winWord && isItWord){
-
         if(guessWordLists.length<5){
         guessWordLists.push(playerWord.join(''));
         lives=lives-1;
-
+        // guessLetters.classList.add('wordChild-notWord')
+        // guessLetters.classList.replace('wordChild','wordChild-notWord')
+        if(lives==0){
+            guessLetters.forEach(element=>{
+                element.style.backgroundColor='red';
+    })
+        }
+          
 for (let m = 0; m < guessList.length; m++) {
     const guessBoxes = guessList[m].querySelectorAll('button');
     
@@ -119,9 +117,7 @@ for (let m = 0; m < guessList.length; m++) {
                 guessBoxes[x].style.backgroundColor='lightgreen';
             }else if(chosenWordLetters[x]!==playerWord[x].toLowerCase()){
                 if(chosenWordLetters.includes(playerWord[x].toLowerCase())){
-
                     guessBoxes[x].style.backgroundColor='yellow'
-
                     } else{
                     lettersCondition[x]=false;
                     guessBoxes[x].style.backgroundColor='red'
@@ -132,17 +128,12 @@ for (let m = 0; m < guessList.length; m++) {
         }
 }
  deleteWord();
-
 }   
      gameAlertMessage.textContent=`Wrong Word | remaining Guesses ${lives}`
-  
-
-   }
- 
-}
+    }
+ }
 
 //Function reset button
-
 const resetGame=()=>{
     lives=5;
     deleteWord();
@@ -160,16 +151,14 @@ const resetGame=()=>{
     startGame()
     
 }
-
-
 /*----------------------------- Event Listeners -----------------------------*/
-
 
     //event to start the game by [start]
 startButton.addEventListener('click',startGame);
 
 //event to reset the game by [reset]
 resetButton.addEventListener('click',resetGame);
+
 //event to use the del button which will delete the whole word [del]
 deleteButton.addEventListener('click',deleteWord)
 
