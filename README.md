@@ -26,7 +26,9 @@ I have used several Tools to develop this game:
 ## *References*
 >For more info about Wordle you can [click here](https://en.wikipedia.org/wiki/Wordle)
 
->you may download the game from [WordleTheGame](https://github.com/ibutaibeh/Wordle)
+>you may Access the game from [WordleTheGame](https://ibutaibeh.github.io/Wordle/)
+
+> for more info about the game codes and functions [Wordle The Game repos.](https://github.com/ibutaibeh/Wordle)
 
 ## What is Next?
 + QoL 
