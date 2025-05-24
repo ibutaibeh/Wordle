@@ -1,5 +1,5 @@
 # Wordle the game
-![Wordle the Game](./assets/MDN/wordle.png)
+![Wordle the Game](./assets/Backgrounds/mdn%20banner.png)
 
 ## **What is Wordle?** <br>
 Wordle is word puzzle game where the objective is to guess a five-letter word within five attempts. <br>
